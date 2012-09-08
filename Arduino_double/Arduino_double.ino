@@ -31,15 +31,15 @@ void loop(){
 void writeI2c(int board){
   Wire.requestFrom(board, 2);    // request 16 bytes from slave device #38
   
-  //Serial.print("From attiny ");
-  //Serial.print(board);
-  //Serial.print(" ");  
+  Serial.print("From attiny ");
+  Serial.print(board);
+  Serial.print(" ");  
   while (Wire.available())
   { 
     int c = Wire.read(); // receive a byte as character
-    Serial.write(c);         // print the character
-  //  Serial.print(",");
+    Serial.print(c);         // print the character
+    Serial.print(",");
   }
-  Serial.write(252); 
-  //Serial.println(" end");    
+//  Serial.write(252); 
+  Serial.println(" end");    
 }
